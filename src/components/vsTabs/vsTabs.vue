@@ -30,7 +30,11 @@
               :color="color"
               class="vs-tabs--btn-icon"></vs-icon>
             <span v-if="child.label">{{ child.label }}</span>
-            <div class="vs-tabs-with-badge" v-if="child.badge" :style="child.badgeStyle">{{ child.badge }}</div>
+            <div
+              v-if="child.badge"
+              :style="child.badgeStyle" 
+              class="vs-tabs-with-badge"
+            >{{ child.badge }}</div>
           </button>
 
           <button
