@@ -29,6 +29,12 @@ export default {
       type:String,
       default:'material-icons'
     },
+    badge:{
+      type: Number
+    },
+    badgeStyle:{
+      type: Object
+    }
   },
   data:()=>({
     vertical:false,
@@ -39,6 +45,12 @@ export default {
   watch: {
     label(val) {
       this.$parent.children[this.id].label = val;
+    },
+    badge(val) {
+      this.$parent.children[this.id].badge = val;
+    },
+    badgeStyle(val) {
+      this.$parent.children[this.id].badgeStyle = val;
     },
     '$attrs' (val) {
       this.$parent.children[this.id].attrs = val;
@@ -51,6 +63,7 @@ export default {
       icon: this.icon,
       iconPack: this.iconPack,
       tag: this.tag,
+      badge: this.badge,
       id: this.$parent.children.length,
       listeners: this.$listeners,
       attrs: this.$attrs

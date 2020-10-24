@@ -30,6 +30,7 @@
               :color="color"
               class="vs-tabs--btn-icon"></vs-icon>
             <span v-if="child.label">{{ child.label }}</span>
+            <div class="vs-tabs-with-badge" v-if="child.badge" :style="child.badgeStyle">{{ child.badge }}</div>
           </button>
 
           <button
@@ -42,6 +43,7 @@
               :icon="child.tag"
               :color="child.tagColor"></vs-icon>
           </button>
+
         </li>
       </ul>
       <span
@@ -57,9 +59,10 @@
 <script>
 import _color from '../../utils/color.js'
 import vsIcon from '../vsIcon/vsIcon.vue'
+import vsChip from '../vsChip/vsChip.vue';
 export default {
   name:'VsTabs',
-  components:{vsIcon},
+  components:{vsIcon, vsChip},
   props:{
     value: {
       default: 0,
