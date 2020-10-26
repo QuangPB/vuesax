@@ -124,11 +124,14 @@ export default {
     },
   },
   mounted(){
-    const activeIndex = this.parseIndex(this.value)
-    this.childActive = activeIndex
+    if(this.$children.length == 0) return;
+    
+    const activeIndex = this.parseIndex(this.value);
+    this.childActive = activeIndex;
+    
     this.$nextTick(() => {
-      this.activeChild(activeIndex, true)
-    })
+      this.activeChild(activeIndex, true);
+    });
   },
   methods:{
     clickTag(child) {
