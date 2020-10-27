@@ -124,7 +124,7 @@ export default {
     },
   },
   mounted(){
-    if(this.$children.length == 0) return;
+    if(this.$children.length == 0 || !this.value) return;
     
     const activeIndex = this.parseIndex(this.value);
     this.childActive = activeIndex;
