@@ -56,7 +56,7 @@ export default {
   },
   methods:{
     sortValue () {
-      this.currentSort = this.currentSort !== 2 ? this.currentSort + 1 : 0;
+      this.currentSort = this.currentSort !== 2 ? this.currentSort + 1 : 1;
       this.$parent.sort(this.sortKey, this.sortStatuses[this.currentSort]);
     },
     resetSort() {
